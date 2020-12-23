@@ -20,7 +20,7 @@ f <- rtweet::get_friends("@BotAtlanta")
 accounts <- c(f$user_id)
 
 #Pull timeline all of all friends and filter to those whithin the last 4 hours
-tweets <- rtweet::get_timeline(accounts, n= 500, exclude_replies = TRUE) %>% 
+tweets <- rtweet::get_timeline(accounts, n= 100, exclude_replies = TRUE) %>% 
   filter(libridate::difftime(libridate::now(tzone = 'UTC'), created_at) < 240)
 
 falcons <- c('Falcons|Atlanta|ATL')
