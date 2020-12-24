@@ -23,7 +23,7 @@ accounts <- c(f$user_id)
 tweets <- rtweet::get_timeline(accounts, n= 50, exclude_replies = TRUE) %>% 
   filter(difftime(lubridate::now(tzone = 'UTC'), created_at) < 400)
 
-falcons <- c('Falcons|Atlanta|ATL|Texans|Patriot')
+falcons <- c('Falcons|Atlanta|ATL|Ridley|Julio|Falcon')
 #filter tweets to just falcons related
 falcons_post <- rtweet::tweets %>% 
   filter(str_detect(text, falcons))
