@@ -29,7 +29,7 @@ falcons_post <- rtweet::tweets %>%
   filter(str_detect(text, falcons))
 
 #post_tweet using retweet_id equalt to the status id
-if (dim(falcons_post)[1] == 0) {
+if (nrow(falcons_post) > 0) {
   rtweet::post_tweet(retweet_id = falcons_post$status_id)
 }
 #rtweet::post_tweet(retweet_id = falcons_post$status_id)
