@@ -4,7 +4,7 @@ name: falconsbot
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */2 * * *'
 
 jobs:
   falconsbot-post:
