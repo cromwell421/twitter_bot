@@ -7,10 +7,10 @@ library(tidyverse)
 # Create a token containing your Twitter keys
 token <-rtweet::create_token(
   app = "atlanta_falcons_bot",  # the name of the Twitter app
-  consumer_key = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
-  consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token = Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET")
+  consumer_key = Sys.getenv("CONSUMER_KEY"),
+  consumer_secret = Sys.getenv("CONSUMER_SECRET"),
+  access_token = Sys.getenv("ACCESS_TOKEN"),
+  access_secret = Sys.getenv("ACCESS_SECRET")
 )
 
 #get list of friends
