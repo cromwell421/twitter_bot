@@ -20,13 +20,26 @@ f <- rtweet::get_friends("@BotAtlanta")
 accounts <- c(f$user_id)
 
 #Pull timeline all of all friends and filter to those whithin the last 4 hours
-tweets <- rtweet::get_timeline(accounts, n= 10, exclude_replies = TRUE) %>% 
+tweets <- rtweet::get_timeline(accounts, n= 10, exclude_replies = TRUE)
+
+print(paste0("Number of Tweets Pulled:     ", nrow(tweets)))
+print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
+
+tweets <-  tweets %>% 
   filter(as.numeric(difftime(lubridate::now(tzone = 'UTC'), created_at)) < 60)
+
+print(paste0("Number of Tweets Filtered in Past Hour:     ", nrow(tweets)))
+print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
+print(paste0("Oldest Date of Tweets:     ", min(tweets$created_at)))
+
 
 falcons <- c('Falcons|Atlanta|ATL|Ridley|Julio|Falcon|Matt Ryan')
 #filter tweets to just falcons related
 falcons_post <- tweets %>% 
   filter(str_detect(text, falcons))
+
+print(paste0("Number of Falcons Tweets:     ", nrow(falcons_post)))
+
 
 #post_tweet using retweet_id equalt to the status id
 if (nrow(falcons_post) > 0) {
