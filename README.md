@@ -6,3 +6,5 @@ Using the [rtweet](https://github.com/ropensci/rtweet) package, you can connect 
 
 ## Scheduling the Jobs in GitHub Actions
 Creating a YAML document in .GitHub/workflows folder, I set the cron job to run every hour. The job then runs the R script which pulls the timeline from all every friend of the bot (accounts the bot follows). It then filters the tweets for Falcons references (Falcon, ATL, Atlanta, etc). If there are any tweets that fall in that criteria, the process will retweet each post.
+
+Do NOT post your API keys to any public repo. GH Secrets works great for storing confidential information and saving as an environmental variable you can reference in your R script.
