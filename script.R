@@ -1,9 +1,6 @@
 library(tidyverse)
 
 
-# unlink(Sys.getenv("TWITTER_PAT"))
-# Sys.unsetenv("TWITTER_PAT")
-
 # Create a token containing your Twitter keys
 token <-rtweet::create_token(
   app = "atlanta_falcons_bot",  # the name of the Twitter app
