@@ -26,7 +26,7 @@ print(paste0("Number of Tweets Pulled:     ", nrow(tweets)))
 print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
 
 tweets <-  tweets %>% 
-  filter(as.numeric(difftime(lubridate::now(tzone = 'UTC'), created_at)) < 60)
+  filter(as.numeric(difftime(lubridate::now(tzone = 'UTC'), created_at, units = 'mins')) <= 60) #difference is in minutes is less than equal 60 seconds
 
 print(paste0("Number of Tweets Filtered in Past Hour:     ", nrow(tweets)))
 print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
