@@ -33,10 +33,10 @@ print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
 print(paste0("Oldest Date of Tweets:     ", min(tweets$created_at)))
 
 
-falcons <- c('Falcons|Atlanta|ATL|Ridley|Julio|Falcon|Matt Ryan')
+falcons <- c('Falcons|Atlanta|ATL|Ridley|Julio|Falcon|Matt Ryan|Foye|AJ Terrell|Gurley|Arthur Blank|Raheem Morris|Ulbrich|Dirk|Koetter|Grady|G. Jarrett|J. Jones|M. Ryan|Deion Jones|D. Jones|Hurst|Keanu Neal|K. Neal')
 #filter tweets to just falcons related
 falcons_post <- tweets %>% 
-  filter(str_detect(text, falcons))
+  filter(str_detect(text, regex(falcons, ignore_case = T)))
 
 print(paste0("Number of Falcons Tweets:     ", nrow(falcons_post)))
 
