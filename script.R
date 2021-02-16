@@ -33,7 +33,7 @@ print(paste0("Latest Date of Tweets:     ", max(tweets$created_at)))
 print(paste0("Oldest Date of Tweets:     ", min(tweets$created_at)))
 
 #falcons related keywords to pull off of
-falcons <- 'Falcons|Atlanta|ATL|Ridley|Julio|Falcon|Matt Ryan|Foye|AJ Terrell|Gurley|Arthur Blank|Arthur Smith|Dean Pees|Grady|G. Jarrett|J. Jones|M. Ryan|Deion Jones|D. Jones|Hurst|Keanu Neal|K. Neal'
+falcons <- 'Falcons|Atlanta|ATL |ATLvs|Ridley|Julio|Falcon|Matt Ryan|Foye|AJ Terrell|Gurley|Arthur Blank|Fontenot|Arthur Smith|Dean Pees|Grady|G. Jarrett|J. Jones|M. Ryan|Deion Jones|D. Jones|Hurst|Keanu Neal|K. Neal'
 
 #filter tweets to just falcons related
 falcons_post <- tweets %>% 
